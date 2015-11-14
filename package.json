@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf lib dist",
     "build": "babel src --out-dir lib",
-    "build:umd": "webpack src/index.js dist/hooyaks.js && NODE_ENV=production webpack src/index.js dist/hooyaks.min.js",
+    "build:umd": "webpack src/index.js dist/hooyaks.js && NODE_ENV=production webpack src/index.js dist/hooyaks.min.js --config webpack.config.development.js",
+    "build:umd:min": "webpack src/index.js dist/hooyaks.js && NODE_ENV=production webpack src/index.js dist/hooyaks.min.js --config webpack.config.production.js",
     "lint": "eslint test src examples",
     "test": "NODE_ENV=test mocha",
     "test:watch": "npm test -- --watch",
@@ -27,7 +28,8 @@
     "isparta": "^3.0.3",
     "mocha": "^2.2.5",
     "rimraf": "^2.4.2",
-    "webpack": "^1.11.0"
+    "webpack": "^1.11.0",
+    "webpack-merge": "^0.3.0"
   },
   "dependencies": {
     "map-obj": "^1.0.1"
