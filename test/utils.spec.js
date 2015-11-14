@@ -1,7 +1,7 @@
 import expect from 'expect';
 
 import { default as reducers } from './helpers/reducers';
-import { inc, dec } from './helpers/actions';
+import * as actions from './helpers/actions';
 
 import {
   create,
@@ -12,9 +12,12 @@ import {
 
 describe('bindActionCreators', () => {
   let store;
-  beforeEach(() => { store = create(counterReducer); });
+  beforeEach(() => { store = create(reducers.counter); });
 
   it('wraps the action creators with the dispatch function', () => {
-    const bound = bindActionCreators({ inc, dec }, store.dispatch);
+    const creators = bindActionCreators(actions, store.dispatch);
+    expect(Object.keys(creators)).toEqual(Object.keys(actions));
+
+    creators.inc();
   });
 });

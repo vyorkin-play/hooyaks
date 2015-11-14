@@ -1,5 +1,5 @@
 import mapObj from 'map-obj';
-import { default as utils } from './utils.js';
+import * as utils from './utils.js';
 
 export default {
   create: (reducer, initialState) => {
