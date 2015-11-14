@@ -1,8 +1,14 @@
 import expect from 'expect';
-import { create, compose } from '../src';
 
-const counterReducer = (state = 0, action) => action.type === 'inc' ? state + 1 : state;
-const stackReducer = (state = [], action) => action.type === 'push' ? [...state, action.value] : state;
+import { default as reducers } from './helpers/reducers';
+import { inc, dec } from './helpers/actions';
+
+import {
+  create,
+  combine,
+  bindActionCreator,
+  bindActionCreators
+} from '../src';
 
 describe('create', () => {
   it('exposes public API', () => {
@@ -20,16 +26,16 @@ describe('create', () => {
   });
 
   it('applies the reducer to the previous state', () => {
-    const store = create(counterReducer);
+    const store = create(reducers.counter);
     expect(store.getState()).toEqual(0);
     store.dispatch({ type: 'inc' });
     expect(store.getState()).toEqual(1);
   });
 });
 
-describe('compose', () => {
+describe('combine', () => {
   it('combines reducers', () => {
-    const reducer = compose({ counter: counterReducer, stack: stackReducer });
+    const reducer = combine(reducers);
 
     const s1 = reducer({}, { type: 'inc' });
     expect(s1).toEqual({ counter: 1, stack: [] });

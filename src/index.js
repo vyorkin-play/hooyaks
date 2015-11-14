@@ -1,4 +1,5 @@
 import mapObj from 'map-obj';
+import { default as utils } from './utils.js';
 
 export default {
   create: (reducer, initialState) => {
@@ -7,6 +8,9 @@ export default {
     dispatch({ type: '.i./INIT' });
     return { dispatch, getState: () => state };
   },
-  compose: (reducers) => (state = {}, action) =>
-    mapObj(reducers, (key, reducer) => [key, reducer(state[key], action)])
+
+  combine: (reducers) => (state = {}, action) =>
+    mapObj(reducers, (key, reducer) => [key, reducer(state[key], action)]),
+
+  ...utils
 };
