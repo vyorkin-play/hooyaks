@@ -9,11 +9,11 @@
     "build:umd": "webpack src/index.js dist/hooyaks.js && NODE_ENV=production webpack src/index.js dist/hooyaks.min.js",
     "lint": "eslint test src examples",
     "test": "NODE_ENV=test mocha",
-    "test:watch": "NODE_ENV=test mocha --watch",
+    "test:watch": "npm test -- --watch",
     "test:cov": "babel-node ./node-modules/.bin/isparta cover ./node_modules/.bin/_mocha",
     "prepublish": "npm run lint && npm run test && npm run clean && npm run build && npm run build:umd"
   },
-  "author": "Bodraya zhuchka woof-woof! <woof-woof@bodraya-zhuchka.com>",
+  "author": "Vasiliy Yorkin <vasiliy.yorkin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.8.21",
@@ -21,7 +21,7 @@
     "babel-eslint": "^4.0.5",
     "babel-loader": "^5.3.2",
     "eslint": "^1.1.0",
-    "eslint-config-airbnb": "0.0.7",
+    "eslint-config-airbnb": "0.1.0",
     "eslint-plugin-react": "^3.2.2",
     "expect": "^1.8.0",
     "isparta": "^3.0.3",
