@@ -18,6 +18,10 @@ describe('bindActionCreators', () => {
     const creators = bindActionCreators(actions, store.dispatch);
     expect(Object.keys(creators)).toEqual(Object.keys(actions));
 
-    creators.inc();
+    const inc = creators.inc();
+    const state = store.getState();
+
+    expect(inc).toEqual({ type: 'inc' });
+    expect(state).toEqual(1);
   });
 });

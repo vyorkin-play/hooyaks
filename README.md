@@ -4,3 +4,10 @@
 # wat
 
 reimplementing redux to understand everything
+
+# development
+
+```
+npm i
+npm i map-obj
+```
