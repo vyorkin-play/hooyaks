@@ -14,8 +14,16 @@ module.exports = {
     ]
   },
   output: {
-    library: 'hooyaks',
+    library: 'Hooyaks',
     libraryTarget: 'umd'
+  },
+  externals: {
+    'map-obj': {
+      root: 'MapObj',
+      commonjs2: 'map-obj',
+      commonjs: 'map-obj',
+      amd: 'map-obj'
+    }
   },
   resolve: {
     extensions: ['', 'js']
