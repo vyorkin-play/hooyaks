@@ -9,7 +9,7 @@
     "build:umd": "webpack src/index.js dist/hooyaks.min.js --config webpack.config.development.js",
     "build:umd:min": "webpack src/index.js dist/hooyaks.min.js --config webpack.config.production.js",
     "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
-    "lint": "eslint test src examples",
+    "lint": "eslint test src",
     "test": "NODE_ENV=test mocha",
     "test:watch": "npm test -- --watch",
     "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/_mocha",
