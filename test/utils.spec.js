@@ -31,8 +31,8 @@ describe('bindActionCreators', () => {
 describe('applyMiddleware', () => {
   it('wraps dispatch method with middleware', () => {
     const spy = expect.createSpy();
-    const test = (methods) => {
-      spy(methods);
+    const test = (store) => {
+      spy(store);
       return dispatch => action => dispatch(action);
     };
 
