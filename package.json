@@ -32,7 +32,7 @@
     "webpack": "^1.11.0",
     "webpack-merge": "^0.3.0"
   },
-  "peerDependencies": {
+  "dependencies": {
     "map-obj": "^1.0.1"
   }
 }
