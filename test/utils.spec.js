@@ -29,6 +29,16 @@ describe('bindActionCreators', () => {
 });
 
 describe('applyMiddleware', () => {
+  it('works with thunk middleware', () => {
+    const pureStore = create(reducers.counter);
+    const enhancedStore = applyMiddleware(pureStore, [thunk]);
+    const { dispatch } = enhancedStore;
+
+    dispatch(actions.incAsync());
+
+    expect(enhancedStore.getState()).toEqual(1);
+  });
+
   it('wraps dispatch method with middleware', () => {
     const spy = expect.createSpy();
     const test = (store) => {
