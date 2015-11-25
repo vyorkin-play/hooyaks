@@ -21,24 +21,24 @@
   "author": "Vasiliy Yorkin <vasiliy.yorkin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.8.21",
-    "babel-core": "^5.8.22",
-    "babel-eslint": "^4.0.5",
-    "babel-loader": "^5.3.2",
+    "babel": "5.8.21",
+    "babel-core": "5.8.22",
+    "babel-eslint": "4.0.5",
+    "babel-loader": "5.3.2",
     "commitizen": "2.4.6",
     "cz-conventional-changelog": "1.1.4",
-    "eslint": "^1.1.0",
+    "eslint": "1.1.0",
     "eslint-config-airbnb": "0.1.0",
-    "eslint-plugin-react": "^3.2.2",
+    "eslint-plugin-react": "3.2.2",
     "exact-semver": "1.2.0",
-    "expect": "^1.8.0",
+    "expect": "1.8.0",
     "ghooks": "1.0.1",
-    "isparta": "^3.0.3",
-    "mocha": "^2.2.5",
-    "rimraf": "^2.4.2",
-    "semantic-release": "^4.3.5",
-    "webpack": "^1.11.0",
-    "webpack-merge": "^0.3.0"
+    "isparta": "3.0.3",
+    "mocha": "2.2.5",
+    "rimraf": "2.4.2",
+    "semantic-release": "4.3.5",
+    "webpack": "1.11.0",
+    "webpack-merge": "0.3.0"
   },
   "dependencies": {
     "map-obj": "1.0.1"
@@ -52,7 +52,8 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run exact-semver && npm run test"
+      "pre-commit": "npm run test",
+      "update": "npm run exact-semver"
     }
   }
 }
