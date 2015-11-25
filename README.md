@@ -3,7 +3,8 @@
 
 # wat
 
-reimplementing redux to understand everything
+Reimplementing redux to understand everything.  
+Also I use it as a reference setup for developing an npm package.
 
 # development
 

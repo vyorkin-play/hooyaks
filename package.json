@@ -6,6 +6,7 @@
   "scripts": {
     "commit": "git-cz",
     "exact-semver": "exact-semver",
+    "git-issues": "git-issues",
     "clean": "rimraf lib dist coverage",
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack src/index.js dist/hooyaks.min.js --config webpack.config.development.js",
@@ -33,6 +34,7 @@
     "exact-semver": "1.2.0",
     "expect": "1.8.0",
     "ghooks": "1.0.1",
+    "git-issues": "1.2.0",
     "isparta": "3.0.3",
     "mocha": "2.2.5",
     "rimraf": "2.4.2",
@@ -53,6 +55,7 @@
   "config": {
     "ghooks": {
       "pre-commit": "npm run test",
+      "post-commit": "npm run git-issues",
       "update": "npm run exact-semver"
     }
   }
