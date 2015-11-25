@@ -49,14 +49,14 @@
     "type": "git",
     "url": "https://github.com/vyorkin/hooyaks.git"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
-  },
   "config": {
     "ghooks": {
       "pre-commit": "npm run test",
       "post-commit": "npm run git-issues",
       "update": "npm run exact-semver"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
