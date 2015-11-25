@@ -19,7 +19,18 @@
     "jsx-quotes": [2, "prefer-single"],
     "one-var": 0,
     "no-unused-vars": [2, {"args": "after-used", "argsIgnorePattern": "^_"}],
-    "id-length": [2, {"min": 2, "properties": "never", "exceptions": ["_", "x", "y", "i", "j"]}],
+    "id-length": [2, {
+      "min": 2,
+      "properties": "never",
+      "exceptions": [
+        "_",
+        "x", "y",
+        "i", "j", "k",
+        "n",
+        "e",
+        "s", "a", "d"
+      ]
+    }],
   },
   "globals": {
     "describe": true,
