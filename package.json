@@ -5,6 +5,7 @@
   "version": "0.0.0-semantically-released",
   "scripts": {
     "commit": "git-cz",
+    "exact-semver": "exact-semver",
     "clean": "rimraf lib dist coverage",
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack src/index.js dist/hooyaks.min.js --config webpack.config.development.js",
@@ -29,6 +30,7 @@
     "eslint": "^1.1.0",
     "eslint-config-airbnb": "0.1.0",
     "eslint-plugin-react": "^3.2.2",
+    "exact-semver": "1.2.0",
     "expect": "^1.8.0",
     "ghooks": "1.0.1",
     "isparta": "^3.0.3",
@@ -39,7 +41,7 @@
     "webpack-merge": "^0.3.0"
   },
   "dependencies": {
-    "map-obj": "^1.0.1"
+    "map-obj": "1.0.1"
   },
   "repository": {
     "type": "git",
@@ -50,7 +52,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm run exact-semver && npm run test"
     }
   }
 }
