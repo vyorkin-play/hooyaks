@@ -5,6 +5,7 @@
   "version": "0.0.0-semantically-released",
   "scripts": {
     "commit": "git-cz",
+    "fixpack": "fixpack",
     "exact-semver": "exact-semver",
     "git-issues": "git-issues",
     "clean": "rimraf lib dist coverage",
@@ -33,6 +34,7 @@
     "eslint-plugin-react": "3.2.2",
     "exact-semver": "1.2.0",
     "expect": "1.8.0",
+    "fixpack": "2.2.0",
     "ghooks": "1.0.1",
     "git-issues": "1.2.0",
     "isparta": "3.0.3",
@@ -53,7 +55,7 @@
     "ghooks": {
       "pre-commit": "npm run test",
       "post-commit": "npm run git-issues",
-      "update": "npm run exact-semver"
+      "update": "npm run fixpack && npm run exact-semver"
     },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
