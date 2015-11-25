@@ -30,6 +30,7 @@
     "eslint-config-airbnb": "0.1.0",
     "eslint-plugin-react": "^3.2.2",
     "expect": "^1.8.0",
+    "ghooks": "1.0.1",
     "isparta": "^3.0.3",
     "mocha": "^2.2.5",
     "rimraf": "^2.4.2",
@@ -46,5 +47,10 @@
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
   }
 }
